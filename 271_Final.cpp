@@ -93,6 +93,8 @@ void main()
 	in.clear();
 	in.close();
 	cout << '\n';
+	//ofstream out;
+	//out.open("SuspectCars.txt");
 	for (int q = 1; q < cars.size() - 1; q++)  // car.size() - 1 because the last is a repeat for some reason
 	{											// started q at 1 since the first row is header information in the excel doc
 		if (SuspectCheck(thefts, cars[q].date, cars[q].timeInHour, cars[q].timeInMin, cars[q].timeOutHour, cars[q].timeOutMin) == true) //calling to check if vehicle is suspect
@@ -100,9 +102,15 @@ void main()
 			cout << "Information for suspect car:" << endl;
 			cout << cars[q].date << "  Time in: " << cars[q].timeInHour << ':' << cars[q].timeInMin << "  Time out: " << cars[q].timeOutHour << ':' << cars[q].timeOutMin << "  "
 				<< cars[q].make << ' ' << cars[q].model << ' ' << cars[q].licensePlate << '\n' << endl;
+				
+			// optional output to file "SuspectCars.txt"
+			/*out << "Information for suspect car:" << endl;
+			out << cars[q].date << "  Time in: " << cars[q].timeInHour << ':' << cars[q].timeInMin << "  Time out: " << cars[q].timeOutHour << ':' << cars[q].timeOutMin << "  "
+				<< cars[q].make << ' ' << cars[q].model << ' ' << cars[q].licensePlate << '\n' << endl;*/ 
 		}
 	}
-
+	//out.clear();
+	//out.close();
 }
 
 bool SuspectCheck(vector<TheftInfo> thief, string d, string tih, string tim, string toh, string tom)
