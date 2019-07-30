@@ -46,7 +46,7 @@ void main()
 		in.open(file);
 	}
 	while (!in.eof())
-	{										// putting theft file information into TheftInfo object
+	{							// putting theft file information into TheftInfo object
 		getline(in, th.date, ',');
 		getline(in, th.timeHour, ':');
 		getline(in, th.timeMin, '\n');
@@ -72,7 +72,7 @@ void main()
 		in.open(file);
 	}
 	while (!in.eof())
-	{											// reading it into the parking stuct object
+	{								// reading it into the parking stuct object
 		getline(in, par.date, ',');
 		getline(in, par.timeInHour, ':');
 		getline(in, par.timeInMin, ',');
